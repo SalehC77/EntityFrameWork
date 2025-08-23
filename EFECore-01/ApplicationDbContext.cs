@@ -28,11 +28,43 @@ namespace EFECore_01
             /*modelBuilder.Entity<AuditEntry>();*/ //The Thired way to add Class like public DbSet<AuditEntry> AuditEntries { get; set; }
 
             /*modelBuilder.Ignore<Post>();*///this for ignore the Create of table in Database
-
+            /*modelBuilder.Entity<Blog>().Ignore(b => b.AddedOn);*/ //this for ignore the Create of Propertity at table in Database
             //modelBuilder.Entity<Blog>()
             //    .ToTable("Blogs",b => b.ExcludeFromMigrations());
 
-            modelBuilder.Entity<Post>().ToTable("Posts");// just for chnage Table name in database
+            //modelBuilder.Entity<Post>().ToTable("Posts");// just for chnage and make Table name in database
+            //modelBuilder.Entity<Post>().ToTable("Posts",schema:"blogging");// change Schema
+            //modelBuilder.HasDefaultSchema("blogging");//to change the defulat Schema = dto --> blogging;
+
+            //modelBuilder.Entity<Blog>().Property(b => b.Url) //this for change property name = Url -> BlogUrl
+            //    .HasColumnName("BlogUrl");
+
+            //modelBuilder.Entity<Blog>(eb =>
+            //{
+            //    eb.Property(b => b.Url).HasColumnType("varchar(200)");
+            //    eb.Property(b => b.Rating).HasColumnType("decimal(5,2)");
+            //});
+            //modelBuilder.Entity<Blog>().Property(b => b.Url).HasMaxLength(200);
+            //modelBuilder.Entity<Blog>().Property(b => b.Url).HasComment("Test Comment");
+
+            /*modelBuilder.Entity<Book>().HasKey(b => b.BookKey).HasName("PK_BookKey");*/ //to set a differnt Primary key and give it a name
+
+            /*modelBuilder.Entity<Book>().HasKey(b => new {b.Name,b.Author});*/ // Set Composite key 
+
+            modelBuilder.Entity<Book>().Property(b => b.Rating).HasDefaultValue(2);//set default value
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,6 +73,7 @@ namespace EFECore_01
         //The first way to class as DbSet to using with DbContext
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Book> Books { get; set; }
         public DbSet<AuditEntry>  AuditEntries { get; set; }
 
     }

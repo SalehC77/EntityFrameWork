@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EFECore_01.Models
 {
+    //[Table("Posts",Schema = "blogging")]
     //[Table("Posts")]
     public class Post
     {

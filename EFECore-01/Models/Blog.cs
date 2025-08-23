@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,7 +13,15 @@ namespace EFECore_01.Models
     {
         public int Id { get; set; }
         [Required]
+        //[Column("BlogUrl")]
+        //[Column(TypeName ="varchar(200)")]
+        //[MaxLength(200)]
+        //[Comment("The Url of the blog")]
         public string Url { get; set; }
+        //[Column(TypeName ="decimal(5,2)")]
+        public decimal Rating { get; set; }
+        //[NotMapped]
+        public DateTime AddedOn { get; set; }
         //[NotMapped]//this for ignore the property from creation in database;
         public List<Post> Posts { get; set; }
     }

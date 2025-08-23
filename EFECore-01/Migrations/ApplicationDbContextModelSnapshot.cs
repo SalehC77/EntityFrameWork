@@ -35,7 +35,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
                 });
 
             modelBuilder.Entity("EFECore_01.Models.AuditEntry", b =>
@@ -56,7 +56,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AuditEntries");
+                    b.ToTable("AuditEntries", (string)null);
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Blog", b =>
@@ -73,7 +73,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Post", b =>
@@ -99,7 +99,7 @@ namespace EFECore_01.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("Post");
+                    b.ToTable("Post", (string)null);
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Post", b =>
