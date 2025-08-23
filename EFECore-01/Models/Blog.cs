@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace EFECore_01.Models
 {
+    //Data annotation
     public class Blog
     {
         public int Id { get; set; }
@@ -18,7 +19,7 @@ namespace EFECore_01.Models
         //[MaxLength(200)]
         //[Comment("The Url of the blog")]
         public string Url { get; set; }
-        //[Column(TypeName ="decimal(5,2)")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Rating { get; set; }
         //[NotMapped]
         public DateTime AddedOn { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace EFECore_01
+﻿using EFECore_01.Models;
+
+namespace EFECore_01
 {
     internal class Program
     {
@@ -11,6 +13,10 @@
             //_context.SaveChanges();
 
 
+            //var _context = new ApplicationDbContext();
+            //var book = new Book() { Name = "book1" ,Author = "saleh" };
+            //_context.Books.Add(book);
+            //_context.SaveChanges();
 
         }
     }

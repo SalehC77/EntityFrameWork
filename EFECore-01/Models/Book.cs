@@ -13,6 +13,7 @@ namespace EFECore_01.Models
         //public int BookKey { get; set; }
         public int Id { get; set; }
         public int Rating { get; set; }
+        public DateTime CreatedOn { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
     }

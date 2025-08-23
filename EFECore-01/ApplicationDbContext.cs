@@ -17,7 +17,7 @@ namespace EFECore_01
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Three way of modifing table Property using Flowint Api
+            //Three way of modifing table Property using Fluent API
             //modelBuilder.Entity<Blog>().
             //    Property(m => m.Url).IsRequired();
             //new BlogEntityTypeConfiguration().Configure(modelBuilder.Entity<Blog>());
@@ -29,8 +29,8 @@ namespace EFECore_01
 
             /*modelBuilder.Ignore<Post>();*///this for ignore the Create of table in Database
             /*modelBuilder.Entity<Blog>().Ignore(b => b.AddedOn);*/ //this for ignore the Create of Propertity at table in Database
-            //modelBuilder.Entity<Blog>()
-            //    .ToTable("Blogs",b => b.ExcludeFromMigrations());
+                                                                    //modelBuilder.Entity<Blog>()
+                                                                    //    .ToTable("Blogs",b => b.ExcludeFromMigrations());
 
             //modelBuilder.Entity<Post>().ToTable("Posts");// just for chnage and make Table name in database
             //modelBuilder.Entity<Post>().ToTable("Posts",schema:"blogging");// change Schema
@@ -51,11 +51,15 @@ namespace EFECore_01
 
             /*modelBuilder.Entity<Book>().HasKey(b => new {b.Name,b.Author});*/ // Set Composite key 
 
-            modelBuilder.Entity<Book>().Property(b => b.Rating).HasDefaultValue(2);//set default value
+            /*modelBuilder.Entity<Book>().Property(b => b.Rating).HasDefaultValue(2);*///set default value
+            /* modelBuilder.Entity<Book>().Property(b => b.CreatedOn).HasDefaultValueSql("GETDATE()");*///set default value using sql funcation or statement
+
+            //modelBuilder.Entity<Author>().Property(p => p.DisplayName) //ComputedColumn
+            //    .HasComputedColumnSql("[LastName] + ', ' + [FirstName] ");
 
 
-
-
+            //modelBuilder.Entity<Category>().Property(b => b.Id) //this for byte primary key adding identity increment
+            //    .ValueGeneratedOnAdd();
 
 
 
@@ -74,6 +78,8 @@ namespace EFECore_01
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<AuditEntry>  AuditEntries { get; set; }
 
     }
