@@ -62,7 +62,8 @@ namespace EFECore_01
             //    .ValueGeneratedOnAdd();
 
 
-
+            //modelBuilder.Entity<Blog>().HasOne(b => b.BlogImage)
+            //    .WithOne(i => i.Blog).HasForeignKey<BlogImage>(b => b.BlogForeignKey);
 
 
 
