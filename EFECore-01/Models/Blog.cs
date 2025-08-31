@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 namespace EFECore_01.Models
 {
     //Data annotation
+    //[Index(nameof(Url),IsUnique = true)]
+    //[Index(nameof(Url), Name = "Index_Url")]
     public class Blog
     {
         public int Id { get; set; }

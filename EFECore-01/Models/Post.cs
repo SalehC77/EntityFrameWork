@@ -14,6 +14,9 @@ namespace EFECore_01.Models
         public int Id { get; set; }
         public string Titel { get; set; }
         public string Content { get; set; }
+        public int BlogId { get; set; }
         public Blog Blog { get; set; }
+        //public ICollection<Tag> Tags { get; set; }
+        public List<PostTag> PostTags { get; set; }
     }
 }

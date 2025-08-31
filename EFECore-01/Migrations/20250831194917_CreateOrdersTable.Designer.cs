@@ -4,6 +4,7 @@ using EFECore_01;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFECore_01.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250831194917_CreateOrdersTable")]
+    partial class CreateOrdersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees", (string)null);
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.AuditEntry", b =>
@@ -57,7 +60,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AuditEntries", (string)null);
+                    b.ToTable("AuditEntries");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Author", b =>
@@ -85,7 +88,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors", (string)null);
+                    b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Blog", b =>
@@ -108,7 +111,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Blogs", (string)null);
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.BlogImage", b =>
@@ -136,7 +139,7 @@ namespace EFECore_01.Migrations
                     b.HasIndex("BlogId")
                         .IsUnique();
 
-                    b.ToTable("BlogImage", (string)null);
+                    b.ToTable("BlogImage");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Book", b =>
@@ -163,7 +166,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books", (string)null);
+                    b.ToTable("Books");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Category", b =>
@@ -181,7 +184,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Order", b =>
@@ -200,7 +203,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Person", b =>
@@ -223,7 +226,7 @@ namespace EFECore_01.Migrations
 
                     b.HasIndex("FirstName", "LastName");
 
-                    b.ToTable("Persons", (string)null);
+                    b.ToTable("Persons");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Post", b =>
@@ -249,7 +252,7 @@ namespace EFECore_01.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("Post", (string)null);
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.PostTag", b =>
@@ -269,7 +272,7 @@ namespace EFECore_01.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("PostTag", (string)null);
+                    b.ToTable("PostTag");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.Tag", b =>
@@ -282,7 +285,7 @@ namespace EFECore_01.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tag", (string)null);
+                    b.ToTable("Tag");
                 });
 
             modelBuilder.Entity("EFECore_01.Models.BlogImage", b =>
