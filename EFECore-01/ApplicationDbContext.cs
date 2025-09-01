@@ -184,7 +184,7 @@ namespace EFECore_01
             //script-migration 20250820185356_AddPostsAndAddAuditEntry => Genrates a SQL script after Current migration to latest migration
             //script-migration 20250820185356_AddPostsAndAddAuditEntry 20250831184128_ManytoManyIndirectAndIndex => Genrates a SQL script after Current migration to the given migration
 
-
+            //Get-Migration => list all migration and status
 
 
 
