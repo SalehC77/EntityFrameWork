@@ -169,17 +169,20 @@ namespace EFECore_01
             //    .Property(o => o.OrderNo).HasDefaultValueSql("NEXT VALUE FOR shared.OrderNumber");
             //*************************************************************
             //Data Seeding
-            modelBuilder.Entity<Blog>()
-                .HasData(new Blog { Id = 1, Url = "www.google.com", Rating = (decimal)4.5, AddedOn = DateTime.Now });
+            //modelBuilder.Entity<Blog>()
+            //    .HasData(new Blog { Id = 1, Url = "www.google.com", Rating = (decimal)4.5, AddedOn = DateTime.Now });
 
-            modelBuilder.Entity<Post>()
-                .HasData(new Post { Id = 1, BlogId = 1, Titel = "Post 1", Content = "test 1" });
+            //modelBuilder.Entity<Post>()
+            //    .HasData(new Post { Id = 1, BlogId = 1, Titel = "Post 1", Content = "test 1" });
 
-            modelBuilder.Entity<Post>()
-                .HasData(new Post { Id = 2, BlogId = 1, Titel = "Post 2", Content = "test 2" },
-                         new Post { Id = 3, BlogId = 1, Titel = "Post 3", Content = "test 3" },
-                         new Post { Id = 4, BlogId = 1, Titel = "Post 4", Content = "test 4" });
+            //modelBuilder.Entity<Post>()
+            //    .HasData(new Post { Id = 2, BlogId = 1, Titel = "Post 2", Content = "test 2" },
+            //             new Post { Id = 3, BlogId = 1, Titel = "Post 3", Content = "test 3" },
+            //             new Post { Id = 4, BlogId = 1, Titel = "Post 4", Content = "test 4" });
 
+            //script-migration => Genrates a SQL script form first migration to latest migration
+            //script-migration 20250820185356_AddPostsAndAddAuditEntry => Genrates a SQL script after Current migration to latest migration
+            //script-migration 20250820185356_AddPostsAndAddAuditEntry 20250831184128_ManytoManyIndirectAndIndex => Genrates a SQL script after Current migration to the given migration
 
 
 
