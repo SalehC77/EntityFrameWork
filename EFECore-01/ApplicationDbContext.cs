@@ -188,6 +188,9 @@ namespace EFECore_01
 
 
 
+            //scaffold-dbContext 'Data Source=DESKTOP-1JJT5LB;Initial Catalog=EFECore;Integrated Security=True;TrustServerCertificate=true;' Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models -ContextDir Data -Context ApplicationDbContext 
+            //scaffold-dbContext 'Data Source=DESKTOP-1JJT5LB;Initial Catalog=EFECore;Integrated Security=True;TrustServerCertificate=true;' Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models -ContextDir Data -Context ApplicationDbContext -DataAnnotations
+            
 
 
 
