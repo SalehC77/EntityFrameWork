@@ -13,6 +13,6 @@ namespace EFECore_01.Models
         public string Licenseplate { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
-        public List<RecodeOfSale> SaleHistory { get; set; }
+        public virtual List<RecodeOfSale> SaleHistory { get; set; }
     }
 }

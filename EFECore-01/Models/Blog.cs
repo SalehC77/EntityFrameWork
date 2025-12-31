@@ -26,8 +26,8 @@ namespace EFECore_01.Models
         //[NotMapped]
         public DateTime AddedOn { get; set; }
         //[NotMapped]//this for ignore the property from creation in database;
-        public List<Post> Posts { get; set; }
+        public virtual List<Post> Posts { get; set; }
 
-        public BlogImage BlogImage { get; set; }
+        public virtual BlogImage BlogImage { get; set; }
     }
 }

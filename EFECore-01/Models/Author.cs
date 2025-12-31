@@ -16,5 +16,6 @@ namespace EFECore_01.Models
         public string LastName { get; set; }
         [MaxLength(150)]
         public string DisplayName { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

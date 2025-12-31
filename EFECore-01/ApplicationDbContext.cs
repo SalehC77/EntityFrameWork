@@ -1,4 +1,5 @@
 ﻿using EFECore_01.Configuraions;
+using EFECore_01.Dtos;
 using EFECore_01.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,7 +14,8 @@ namespace EFECore_01
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Data Source=DESKTOP-1JJT5LB;Initial Catalog=EFECore;Integrated Security=True;TrustServerCertificate=true;");
+            // this for Lazy Loading Proxies
+            options.UseLazyLoadingProxies().UseSqlServer("Data Source=.;Initial Catalog=EFECore;Integrated Security=True;TrustServerCertificate=true;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -190,7 +192,6 @@ namespace EFECore_01
 
             //scaffold-dbContext 'Data Source=DESKTOP-1JJT5LB;Initial Catalog=EFECore;Integrated Security=True;TrustServerCertificate=true;' Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models -ContextDir Data -Context ApplicationDbContext 
             //scaffold-dbContext 'Data Source=DESKTOP-1JJT5LB;Initial Catalog=EFECore;Integrated Security=True;TrustServerCertificate=true;' Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models -ContextDir Data -Context ApplicationDbContext -DataAnnotations
-            
 
 
 
@@ -200,7 +201,8 @@ namespace EFECore_01
 
 
 
-
+            // this for ignore the Dto From the Creation to the database;
+            modelBuilder.Entity<BookDto>(e => { e.HasNoKey().ToView(null); });
         }
 
         //The first way to class as DbSet to using with DbContext
@@ -212,6 +214,8 @@ namespace EFECore_01
         public DbSet<Author> Authors { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AuditEntry>  AuditEntries { get; set; }
+
+        public DbSet<BookDto> BookDto {  get; set; }
 
     }
 }

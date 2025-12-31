@@ -17,6 +17,6 @@ namespace EFECore_01.Models
 
         public int BlogId { get; set; }
         //[ForeignKey("BlogForeignKey")]
-        public Blog Blog { get; set; }
+        public virtual Blog Blog { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace EFECore_01.Models
         public int Rating { get; set; }
         public DateTime CreatedOn { get; set; }
         public string Name { get; set; }
-        public string Author { get; set; }
+        public int AuthorId { get; set; }
+        public virtual Author Author { get; set; }
     }
 }

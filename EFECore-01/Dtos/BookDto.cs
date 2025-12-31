@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFECore_01.Models
+namespace EFECore_01.Dtos
 {
-    public class Tag
+    public class BookDto
     {
         public int Id { get; set; }
-        //public ICollection<Post> Posts { get; set; }
-        public virtual List<PostTag> PostTags { get; set; }
+        public string Name { get; set; }
+        public string AuthorName { get; set; }
     }
 }

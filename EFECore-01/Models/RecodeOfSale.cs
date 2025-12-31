@@ -13,6 +13,6 @@ namespace EFECore_01.Models
         public decimal Price { get; set; }
         public string CarLicensePlate { get; set; }
         public string CarState { get; set; }
-        public Car Car { get; set; }
+        public virtual Car Car { get; set; }
     }
 }
