@@ -129,6 +129,15 @@ namespace EFECore_01
 
 
 
+            //_context.Employees.Skip(990).ExecuteDelete();
+            //_context.Employees.Where(e => e.Id > 950).ExecuteDelete();
+
+            //_context.Employees.Take(10)
+            //    .ExecuteUpdate(x => x.SetProperty(e => e.FirstName, e => e.FirstName + "Updated"));
+
+            //_context.Employees.Take(10)
+            //    .ExecuteUpdate(x => x.SetProperty(e => e.IsActive, true));
+
 
 
 
