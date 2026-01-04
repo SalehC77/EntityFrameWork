@@ -18,5 +18,9 @@ namespace EFECore_01.Models
         public virtual Blog Blog { get; set; }
         //public ICollection<Tag> Tags { get; set; }
         public virtual List<PostTag> PostTags { get; set; }
+        
+        public bool IsDeleted { get; set; }
+
+        
     }
 }

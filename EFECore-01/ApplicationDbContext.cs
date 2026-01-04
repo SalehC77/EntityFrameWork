@@ -202,7 +202,21 @@ namespace EFECore_01
 
 
             // this for ignore the Dto From the Creation to the database;
-            modelBuilder.Entity<BookDto>(e => { e.HasNoKey().ToView(null); });
+            //modelBuilder.Entity<BookDto>(e => { e.HasNoKey().ToView(null); });
+
+            // this for Global QueryFilter in Get the data From the database
+            //modelBuilder.Entity<Post>().HasQueryFilter(p => !p.IsDeleted);
+
+            // remove related Data using : cascade , Restrict , SetNull
+            //modelBuilder.Entity<Blog>().HasMany(b => b.Posts)
+            //    .WithOne(p => p.Blog).OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Blog>().HasMany(b => b.Posts)
+            //    .WithOne(p => p.Blog).OnDelete(DeleteBehavior.SetNull);
+
+
+
+
+
         }
 
         //The first way to class as DbSet to using with DbContext
@@ -214,6 +228,7 @@ namespace EFECore_01
         public DbSet<Author> Authors { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AuditEntry>  AuditEntries { get; set; }
+        public DbSet<Post>  Posts { get; set; }
 
         public DbSet<BookDto> BookDto {  get; set; }
 

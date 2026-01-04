@@ -62,6 +62,81 @@ namespace EFECore_01
 
             //end: Stored Procedure 
 
+            // this to ignore glopal filter
+            //var posts = _context.Posts.IgnoreQueryFilters().ToList();
+
+            // this for update data
+            //var post = new Post
+            //{
+            //    Id = 9,
+            //    BlogId = 4,
+            //    Content = "Updated Content",
+            //    IsDeleted = true,
+            //};
+            //_context.Posts.Update(post);
+            //// this tow lines are for ignore updates for spcific property
+            //_context.Entry(post).Property(p => p.BlogId).IsModified = false;
+            //_context.Entry(post).Property(p => p.Titel).IsModified = false;
+            //_context.SaveChanges();
+
+            //using var transaction = _context.Database.BeginTransaction();
+
+            //try
+            //{
+            //    _context.Blogs.Add(new Blog { Url = "test from transacion 1" });
+            //    _context.SaveChanges();
+            //    // in the next add will throw exception and will rollback the prev add
+            //    _context.Blogs.Add(new Blog { Id = 9, Url = "test from transacion 2" });
+            //    _context.SaveChanges();
+            //    transaction.Commit();
+            //}
+            //catch (Exception ex)
+            //{
+            //    transaction.Rollback();
+            //}
+
+            //try
+            //{
+            //    _context.Blogs.Add(new Blog { Url = "test from transacion 1" });
+            //    _context.SaveChanges();
+
+            //    transaction.CreateSavepoint("AddFirstBlog");
+
+            //    _context.Blogs.Add(new Blog {  Url = "test from transacion 2" });
+            //    _context.Blogs.Add(new Blog { Id = 9, Url = "test from transacion 3" });
+            //    _context.SaveChanges();
+            //    transaction.Commit();
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    // in this line will keep the operations
+            //    transaction.RollbackToSavepoint("AddFirstBlog");
+            //    // here in this line will save the operations before the SavePoint only
+            //    transaction.Commit();
+
+
+            //}
+
+
+
+            //_context.Database.ExecuteSqlRaw("Insert Into Blogs Values ('Test')");
+            //// this is stored procedures
+            //_context.Database.ExecuteSqlRaw("pre_GetBookById @Id = 2");
+            //var name = "Test3";
+            //_context.Database.ExecuteSqlRaw($"pre_AddBlog @Name=N'{name}',@");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
