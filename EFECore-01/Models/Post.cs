@@ -7,12 +7,20 @@ using System.Threading.Tasks;
 
 namespace EFECore_01.Models
 {
+    //[Table("Posts",Schema = "blogging")]
     //[Table("Posts")]
     public class Post
     {
         public int Id { get; set; }
         public string Titel { get; set; }
         public string Content { get; set; }
-        public Blog Blog { get; set; }
+        public int BlogId { get; set; }
+        public virtual Blog Blog { get; set; }
+        //public ICollection<Tag> Tags { get; set; }
+        public virtual List<PostTag> PostTags { get; set; }
+        
+        public bool IsDeleted { get; set; }
+
+        
     }
 }
